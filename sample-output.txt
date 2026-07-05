@@ -1,0 +1,8 @@
+
+
+
+Business: newworld media 
+Repetitive Task: post on social media and comment on posts 
+Workflow Trigger: social media idea logged into airtbale 
+Desired Outcome: post and commnet on social media platforms 
+Automation Hypothesis:  when social media idea logged into airtbale , the post on social media and comment on posts  will be automated for newworld media  to achieve post and commnet on social media platforms .
