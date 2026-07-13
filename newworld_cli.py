@@ -11,12 +11,20 @@ def main():
     return brief
 
 def format_brief(business, repetitive_task, workflow_trigger, desired_outcome):
-    hypothesis = f" when {workflow_trigger}, the {repetitive_task} will be automated for {business} to achieve {desired_outcome}."
+    hypothesis = f"when {workflow_trigger}, the {repetitive_task} will be automated for {business} to achieve {desired_outcome}."
+    if any(keyword in workflow_trigger for keyword in ["client", "someone", "request", "submit", "approval"]):
+        category = "High automation potential"
+        hypothesis = f"when {workflow_trigger}, the {repetitive_task} will be automated for {business} to achieve {desired_outcome} and improve client experience."
+    elif any(keyword in workflow_trigger for keyword in ["logged", "added", "notified"]):
+        category = "Medium automation potential"
+    else:
+        category = "Low automation potential"
     brief = f"""
     Business: {business}
     Repetitive Task: {repetitive_task}
     Workflow Trigger: {workflow_trigger}
     Desired Outcome: {desired_outcome}
+    Category: {category}
     Automation Hypothesis: {hypothesis}
     """
     return brief
