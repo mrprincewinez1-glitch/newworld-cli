@@ -36,6 +36,15 @@ This is a simple, rule-based keyword check — not AI-powered — so it won't
 catch every possible phrasing, but it gives a quick first read on which
 automation ideas are worth prioritizing.
 
+
+## Input validation
+
+Every question the program asks must be answered before it will continue.
+If you press Enter without typing anything, the program will show a short
+message explaining that the field can't be empty and ask the same question
+again — it won't crash or silently accept a blank answer for any of the
+four inputs (business, repetitive task, workflow trigger, desired outcome).
+
 ## How to run it
 
 From inside the newworld-cli folder:

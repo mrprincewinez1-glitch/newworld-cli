@@ -3,9 +3,17 @@ import textwrap
 
 def main():
     business = input("Enter the name of the business: ")
+    while not business:
+        business = input("Business name cannot be empty. Please enter the name of the business: ")
     repetitive_task = input("Enter the repetitive task to automate: ")
+    while not repetitive_task:
+        repetitive_task = input("Repetitive task cannot be empty. Please enter the repetitive task to automate: ")
     workflow_trigger = input("What workflow starts the task? ")
+    while not workflow_trigger:
+        workflow_trigger = input("Workflow trigger cannot be empty. Please enter the workflow that starts the task: ")
     desired_outcome = input("What is the desired outcome of the task? ")
+    while not desired_outcome:
+        desired_outcome = input("Desired outcome cannot be empty. Please enter the desired outcome of the task: ")
     brief = format_brief(business, repetitive_task, workflow_trigger, desired_outcome)
     print(textwrap.dedent(brief))
     return brief
