@@ -15,7 +15,15 @@ def main():
     while not desired_outcome:
         desired_outcome = input("Desired outcome cannot be empty. Please enter the desired outcome of the task: ")
     brief = format_brief(business, repetitive_task, workflow_trigger, desired_outcome)
-    print(textwrap.dedent(brief))
+
+    # CHANGED: normalize generated brief text before printing
+    dedented_brief = textwrap.dedent(brief)
+    print(dedented_brief)
+
+    # CHANGED: append each brief to briefs.txt so it is saved permanently
+    with open("briefs.txt", "a", encoding="utf-8") as out_file:
+        out_file.write(dedented_brief.rstrip() + "\n\n")
+
     return brief
 
 def format_brief(business, repetitive_task, workflow_trigger, desired_outcome):
